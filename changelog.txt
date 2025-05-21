@@ -1,0 +1,26 @@
+v1.0.0, Mar 21, 2022
+====================
+Initial release to Android on itch.io
+
+v1.1.0, Mar 22, 2022
+====================
+New:
+- added "Potatoes:" text
+- added clicking sound
+- added support for PC
+Changes:
+- changed background color
+Fixes:
+- fixed screen rotation bug
+
+v1.2.0, May 21, 2025
+====================
+Finally! An update after three years.
+New:
+- Rewrote the game in C
+Changes:
+- remade the whole game in C
+- added support for Linux
+- renamed to "Potatis Clicker: Remake" to reflect the change
+Fixes:
+- increased performance

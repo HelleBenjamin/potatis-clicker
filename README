@@ -1,0 +1,42 @@
+Potatis Clicker: Remake
+=======================
+
+This game is a remake of my original Potatis Clicker, originally released on itch.io. Initially made in C# using Unity(a little overkill) as the engine. This remake is written in C and uses OpenGL as the engine. Aesthetics may seem a little downgrade compared to the original, but it will get better over time.
+OpenGL 2.1 is the only minimum requirement. You should be able to run this any computer, even on an old potato(heh a funny joke).
+
+Building
+========
+On windows:
+Windows might need GLUT and GLU headers and other setup. I haven't tested this on Windows yet, so it might be broken.
+1. Install MinGW(or an other that you like)
+2. Run `mingw32-make` at the project directory
+3. Run `main.exe`
+
+On linux:
+Dependencies that must be installed:
+1. `libglu1-mesa-dev`
+2. `freeglut3-dev`
+3. `libglfw3-dev`, If not using the local version
+
+You can use either `make` or `cmake`. CMake is prefered.
+For make:
+1. Run `make` at the project directory
+2. Run `./main`
+For cmake:
+1. Run `cmake -B build` at the project directory
+2. Run `cmake --build build`
+3. Run `./build/PotatisClicker`
+
+
+Third-party libraries
+=====================
+- GLFW
+- GLAD
+- GLU
+- GLUT
+- STB_IMAGE
+
+License
+=======
+
+Potatis Clicker: Remake is licensed under the GNU Public License v2 (GPLv2). See COPYING for more information

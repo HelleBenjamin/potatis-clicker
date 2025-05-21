@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.txt": "plaintext",
+        "math.h": "c",
+        "pthread.h": "c",
+        "glfw3.h": "c",
+        "time.h": "c"
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.stickyTabStops": false,
+    "editor.comments.insertSpace": false,
+    "editor.detectIndentation": true
+}
