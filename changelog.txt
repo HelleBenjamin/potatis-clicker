@@ -24,3 +24,12 @@ Changes:
 - renamed to "Potatis Clicker: Remake" to reflect the change
 Fixes:
 - increased performance
+
+v1.2.1, May 22, 2025
+====================
+Changes:
+- updated readme
+- changed variable "potatoes" from "long long" to "unsigned int"
+- removed "#define GLFW_DLL" that caused build errors on Windows
+Fixes:
+- fixed compiling on Windows

@@ -22,15 +22,15 @@
 
 #include "../include/potatis_clicker.h"
 
-char VERSION_STR[] = "v1.2.0";
-#define VERSION_NUM 210
+char VERSION_STR[] = "v1.2.1";
+#define VERSION_NUM 211
 
 int SCREEN_WIDTH = 800;
 int SCREEN_HEIGHT = 600;
 
 double cursor_x = 0, cursor_y = 0;
 
-long long potatoes = 0; // the amount of potatoes the player has
+unsigned int potatoes = 0; // the amount of potatoes the player has
 
 typedef struct {
   float x, y, width, height;
@@ -197,13 +197,13 @@ int main(int argc, char **argv) {
   FILE* game_score = fopen("score.dat", "rb+");
   if (!game_score) { // if the file doesn't exist, create it
     game_score = fopen("score.dat", "wb+");
-    fwrite(&potatoes, sizeof(long long), 1, game_score);
+    fwrite(&potatoes, sizeof(unsigned int), 1, game_score);
     fclose(game_score);
     game_score = fopen("score.dat", "rb+");
   }
   
   // if the file exists, load the score
-  if (game_score) fread(&potatoes, sizeof(long long), 1, game_score);
+  if (game_score) fread(&potatoes, sizeof(unsigned int), 1, game_score);
 
   // load the potato texture
   GLuint potato_texture = load_texture("assets/potatis.png");
@@ -240,7 +240,7 @@ int main(int argc, char **argv) {
     // display the count
     render_bitmap_str("Potatoes:", GLUT_BITMAP_TIMES_ROMAN_24, 1, potatis.x, potatis.y+150);
     char potatoes_str[20];
-    snprintf(potatoes_str, 20, "%lld", potatoes);
+    snprintf(potatoes_str, 20, "%u", potatoes);
     glColor3f(1.0, 1.0, 1.0); // white
     render_bitmap_str(potatoes_str, GLUT_BITMAP_TIMES_ROMAN_24, 1, potatis.x, potatis.y+100);
 
@@ -268,7 +268,7 @@ int main(int argc, char **argv) {
 
   if (game_score) { // save the score
     game_score = fopen("score.dat", "wb+");
-    fwrite(&potatoes, sizeof(long long), 1, game_score);
+    fwrite(&potatoes, sizeof(unsigned int), 1, game_score);
     fclose(game_score);
   }
 

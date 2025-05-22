@@ -7,22 +7,29 @@ OpenGL 2.1 is the only minimum requirement. You should be able to run this any c
 Building
 ========
 On windows:
-Windows might need GLUT and GLU headers and other setup. I haven't tested this on Windows yet, so it might be broken.
-1. Install MinGW(or an other that you like)
-2. Run `mingw32-make` at the project directory
-3. Run `main.exe`
+MinGW is used as the compiler. You need to install GLUT to MinGW's include and lib folder.
+For mingw32-make:
+1. Run `mingw32-make` at the project directory
+2. Run `main.exe`
+For CMake:
+1. Run `mkdir build` and `cd build`
+2. Run `cmake .. -G "MinGW Makefiles"`
+3. Run `mingw32-make`
+4. Done
 
 On linux:
 Dependencies that must be installed:
 1. `libglu1-mesa-dev`
 2. `freeglut3-dev`
-3. `libglfw3-dev`, If not using the local version
+3. `mesa-common-dev`
+4. `libglfw3-dev`, If not using the local version
 
 You can use either `make` or `cmake`. CMake is prefered.
+
 For make:
 1. Run `make` at the project directory
 2. Run `./main`
-For cmake:
+For CMake:
 1. Run `cmake -B build` at the project directory
 2. Run `cmake --build build`
 3. Run `./build/PotatisClicker`

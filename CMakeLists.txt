@@ -28,7 +28,7 @@ if(UNIX)
 elseif(WIN32)
   message("Windows Detected")
   target_link_directories(PotatisClicker PRIVATE ${CMAKE_SOURCE_DIR}/lib/win32)
-  target_link_libraries(PotatisClicker PRIVATE gdi32 opengl32 m glfw3 glu32)
+  target_link_libraries(PotatisClicker PRIVATE gdi32 opengl32 m glfw3 glu32 glut32win)
 endif()
 
 # Set building flags
@@ -36,7 +36,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2") # Use -O2 or -O3 for better perfor
 
 set_target_properties(PotatisClicker PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-# Copies assets to build directory, necessary on Windows
+# Copies assets to build directory
 add_custom_command(TARGET PotatisClicker POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory
   ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:PotatisClicker>/assets

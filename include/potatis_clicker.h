@@ -2,7 +2,6 @@
 #define POTATIS_CLICKER_H
 
 #if defined(_WIN32)
-#define GLFW_DLL
 #include <windows.h>
 #else
 #include <unistd.h>
